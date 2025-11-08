@@ -11,25 +11,25 @@ const springValues = {
 export default function Contact() {
   const contacts = [
     {
-      label: "Phone",
-      link: "tel:+1234567890",
+      label: "Latest Project",
+      link: "https://www.brainbinder.net/",
       className: "row-span-2",
       position: "justify-start items-start",
     },
     {
       label: "LinkedIn",
-      link: "https://linkedin.com",
+      link: "https://www.linkedin.com/in/nathana%C3%ABl-lecron/",
       className: "col-span-2",
       position: "justify-start items-end",
     },
     {
       label: "Github",
-      link: "https://github.com",
+      link: "https://github.com/nathanael-lcr",
       position: "justify-end items-start",
     },
     {
       label: "eMail",
-      link: "mailto:hello@example.com",
+      link: "mailto:lecron.nathanael@gmail.com",
       position: "justify-end items-end",
     },
   ];
@@ -115,6 +115,7 @@ function TiltCard({
     <motion.a
       ref={ref}
       href={href}
+      target={href.startsWith("mailto:") ? "_blank" : "_self"}
       onMouseMove={handleMouse}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}

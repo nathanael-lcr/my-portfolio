@@ -44,7 +44,7 @@ export default function Carousel() {
         dragConstraints={{ right: 0, left: -width }}
         dragTransition={{ bounceDamping: 25 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="flex gap-6 cursor-grab active:cursor-grabbing px-8 will-change-transform"
+        className="flex md:gap-6 cursor-grab active:cursor-grabbing md:px-8 will-change-transform"
       >
         {items.map(
           (itemData: {
@@ -61,7 +61,7 @@ export default function Carousel() {
                 width={200}
                 height={200}
                 alt={itemData.title}
-                className="w-auto h-28 object-contain grayscale opacity-80 hover:opacity-100 transition-all duration-300 pointer-events-none"
+                className="w-auto md:h-28 h-12 object-contain grayscale opacity-80 hover:opacity-100 transition-all duration-300 pointer-events-none"
               />
             </motion.div>
           )

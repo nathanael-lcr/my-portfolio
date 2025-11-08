@@ -83,7 +83,7 @@ export default function Home() {
       <div className="overflow-hidden">
         {/* Hero Section */}
         <div className=" flex flex-col">
-          <div className=" dark:text-neutral-100 flex items-end justify-between gap-8 mt-32 ml-14 flex-1">
+          <div className=" dark:text-neutral-100 flex items-end justify-between gap-8 mt-32 md:ml-14 flex-1">
             {/* Name - Animation from left */}
             <motion.div
               className="ml-5"
@@ -92,13 +92,13 @@ export default function Home() {
               variants={staggerContainer}
             >
               <motion.div
-                className="[font-family:var(--font-bokor)] text-[300px] leading-none"
+                className="[font-family:var(--font-bokor)] text-[80px] md:text-[300px] leading-none"
                 variants={slideInLeft}
               >
                 NATHANAEL
               </motion.div>
               <motion.div
-                className="[font-family:var(--font-bokor)] text-[300px] leading-none"
+                className="[font-family:var(--font-bokor)] text-[80px] md:text-[300px] leading-none"
                 variants={slideInLeft}
               >
                 LECRON
@@ -107,7 +107,7 @@ export default function Home() {
 
             {/* Description - Animation from right */}
             <motion.div
-              className="font-family:var(--font-figtree)] font-medium text-3xl text-right pb-11 whitespace-nowrap -translate-x-32"
+              className="font-family:var(--font-figtree)] font-medium text-3xl text-right md:pb-11 whitespace-nowrap -translate-x-32"
               initial="hidden"
               animate="visible"
               variants={staggerContainer}

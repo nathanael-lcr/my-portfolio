@@ -20,17 +20,17 @@ export default function Header() {
         <button
           onClick={handleClick}
           type="button"
-          className="p-3 rounded-full bg-neutral-300/40 dark:bg-neutral-700/40 backdrop-blur-md hover:bg-neutral-400/40 dark:hover:bg-neutral-600/40 transition-colors"
+          className=" p-2 md:p-3 rounded-full bg-neutral-300/40 dark:bg-neutral-700/40 backdrop-blur-md hover:bg-neutral-400/40 dark:hover:bg-neutral-600/40 transition-colors"
           aria-label="Toggle theme"
         >
           {theme === 'light' ? (
-            <Moon className="w-5 h-5 text-neutral-800 dark:text-neutral-200" />
+            <Moon className="w-4 h-4 md:w-5 md:h-5 text-neutral-800 dark:text-neutral-200" />
           ) : (
-            <Sun className="w-5 h-5 text-neutral-200" />
+            <Sun className="w-4 h-4 md:w-5 md:h-5 text-neutral-200" />
           )}
         </button>
 
-        <div className="font-figtree text-lg font-medium bg-neutral-300/40 dark:bg-neutral-700/40 backdrop-blur-md py-2 px-9 rounded-full cursor-pointer hover:bg-neutral-400/40 dark:hover:bg-neutral-600/40 transition-colors dark:text-white">
+        <div className="font-figtree text-sm md:text-lg font-medium bg-neutral-300/40 dark:bg-neutral-700/40 backdrop-blur-md py-1.5 md:py-2 px-4 md:px-9 rounded-full cursor-pointer hover:bg-neutral-400/40 dark:hover:bg-neutral-600/40 transition-colors dark:text-white">
           Get in touch
         </div>
       </div>

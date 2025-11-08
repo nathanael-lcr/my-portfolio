@@ -41,9 +41,9 @@ const projects: Project[] = [
   },
   {
     id: 3,
-    title: "PROPERTY RENTAL",
-    tags: "[web design, branding]",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=850&h=600&fit=crop",
+    title: "BRAINBINDER.",
+    tags: "Web Design & Development",
+    image: "/images/brainbinder_dark.png",
     position: { top: "10%", right: "5%" },
     scale: 1.5
   },
@@ -95,7 +95,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, mouseX, mouse
         ...project.position,
         width: `${350 * project.scale}px`,
       }}
-      className="group cursor-pointer"
+      className="group "
     >
       <motion.div
         style={{ y: smoothFloatY }}
