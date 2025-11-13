@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Figtree, Bokor } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { Analytics } from "@vercel/analytics/next";
 import Header from "@/components/Header";
 
 const figtree = Figtree({ subsets: ["latin"], variable: "--font-figtree" });

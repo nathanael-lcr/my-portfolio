@@ -107,7 +107,7 @@ export default function Home() {
 
             {/* Description - Animation from right */}
             <motion.div
-              className="font-family:var(--font-figtree)] font-medium text-3xl text-right md:pb-11 whitespace-nowrap -translate-x-32"
+              className="absolute font-family:var(--font-figtree)] font-medium text-3xl text-right md:pb-11 whitespace-nowrap right-10"
               initial="hidden"
               animate="visible"
               variants={staggerContainer}
