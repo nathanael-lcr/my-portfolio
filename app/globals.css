@@ -2,3 +2,6 @@
 
 @variant dark (.dark &);
 
+.will-change-transform {
+  will-change: transform;
+}

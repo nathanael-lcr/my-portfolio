@@ -1,6 +1,6 @@
 "use client";
 import Lenis from "lenis";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion, Variants } from "framer-motion";
 import { ArrowLeftRight } from "lucide-react";
 import SecondaryLine from "@/components/SecondaryLine";
@@ -59,18 +59,20 @@ const scaleIn: Variants = {
 };
 
 export default function Home() {
+  const [ready, setReady] = useState(false);
+
   useEffect(() => {
+    setTimeout(() => setReady(true), 200); // avoid "double RAF"
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     });
 
-    function raf(time: any) {
+    const raf = (time: any) => {
       lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
+      window.requestAnimationFrame(raf);
+    };
+    window.requestAnimationFrame(raf);
 
     return () => {
       lenis.destroy();
@@ -82,44 +84,77 @@ export default function Home() {
       <SmoothFollower />
       <div className="overflow-hidden">
         {/* Hero Section */}
-        <div className=" flex flex-col">
-          <div className=" dark:text-neutral-100 flex items-end justify-between gap-8 mt-32 md:ml-14 flex-1">
-            {/* Name - Animation from left */}
+        <div className="flex flex-col">
+          <div
+            className="
+      dark:text-neutral-100
+      flex
+      flex-col
+      items-start
+      gap-6
+      mt-20
+      px-5
+      relative
+
+      md:flex-row
+      md:items-end
+      md:justify-between
+      md:gap-8
+      md:mt-24
+      md:ml-14
+    "
+          >
+            {/* LEFT — NAME */}
             <motion.div
-              className="ml-5"
+              className="will-change-transform"
               initial="hidden"
-              animate="visible"
+              animate={ready ? "visible" : "hidden"}
               variants={staggerContainer}
             >
               <motion.div
-                className="[font-family:var(--font-bokor)] text-[80px] md:text-[300px] leading-none"
+                className="[font-family:var(--font-bokor)] text-[clamp(3rem,16vw,22rem)] leading-none"
                 variants={slideInLeft}
               >
                 NATHANAEL
               </motion.div>
+
               <motion.div
-                className="[font-family:var(--font-bokor)] text-[80px] md:text-[300px] leading-none"
+                className="[font-family:var(--font-bokor)] text-[clamp(3rem,16vw,22rem)] leading-none"
                 variants={slideInLeft}
               >
                 LECRON
               </motion.div>
             </motion.div>
 
-            {/* Description - Animation from right */}
+            {/* RIGHT — DESCRIPTION */}
             <motion.div
-              className="absolute font-family:var(--font-figtree)] font-medium text-3xl text-right md:pb-11 whitespace-nowrap right-10"
+              className="
+              text-[clamp(1rem,2vw,3rem)]
+        font-medium 
+        [font-family:var(--font-figtree)]
+        text-left 
+        space-y-1
+        mr-12
+
+        md:absolute
+        md:right-10
+        md:text-right
+        md:pb-11
+      "
               initial="hidden"
               animate="visible"
               variants={staggerContainer}
             >
               <motion.div variants={slideInRight}>
                 <span className="font-bold">Full-Stack</span> developer
-                interested in the design
+                interested
               </motion.div>
               <motion.div variants={slideInRight}>
-                and creation of immersive web experiences
+                in the design & creation of immersive
               </motion.div>
-              <motion.div variants={slideInRight}>since 2020</motion.div>
+              <motion.div variants={slideInRight}>
+                web experiences since 2020
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -138,7 +173,7 @@ export default function Home() {
 
         {/* Projects Section */}
         <motion.div
-          className="font-family:var(--font-figtree)] dark:text-neutral-100 mt-36 flex items-center justify-center text-3xl mb-12"
+          className="[font-family:var(--font-figtree)] dark:text-neutral-100 mt-36 flex items-center justify-center text-3xl mb-12"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
@@ -151,7 +186,7 @@ export default function Home() {
 
         {/* Tech Stack Section */}
         <motion.div
-          className="dark:text-neutral-100 flex items-center justify-center text-3xl"
+          className="[font-family:var(--font-figtree)] dark:text-neutral-100 flex items-center justify-center text-3xl"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
@@ -160,9 +195,7 @@ export default function Home() {
           TECH STACK.
         </motion.div>
 
-
-        <TechStackCarousel/>
-
+        <TechStackCarousel />
 
         {/* Contact Section */}
         <motion.div
@@ -175,7 +208,7 @@ export default function Home() {
           -
         </motion.div>
 
-        <Contact/>
+        <Contact />
 
         {/* Footer */}
         <motion.div
