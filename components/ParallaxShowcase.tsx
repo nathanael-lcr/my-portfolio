@@ -32,17 +32,17 @@ interface ProjectCardProps {
 const projects: Project[] = [
   {
     id: 1,
-    title: "INTERIOR DESIGNER",
-    tags: "[web design]",
+    title: "C PATHFINDING",
+    tags: "Low level programming & Pathfinding",
     image:
-      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&h=600&fit=crop",
+      "/images/affiche.png",
     position: { top: "15%", left: "8%" },
     scale: 1.4,
   },
   {
     id: 2,
     title: "VIBECODED",
-    tags: "Low level programmaing & music theory",
+    tags: "Low level programming & music theory",
     image: "/images/vibecoded.png",
     position: { top: "60%", left: "3%" },
     scale: 1.2,
@@ -53,7 +53,7 @@ const projects: Project[] = [
     tags: "Web Design & Development",
     image: "/images/brainbinder_dark.png",
     position: { top: "10%", right: "5%" },
-    scale: 1.5,
+    scale: 1.6,
   },
   {
     id: 4,
