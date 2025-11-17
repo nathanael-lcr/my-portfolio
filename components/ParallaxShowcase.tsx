@@ -28,15 +28,15 @@ const projects: Project[] = [
     title: "INTERIOR DESIGNER",
     tags: "[web design]",
     image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&h=600&fit=crop",
-    position: { top: "5%", left: "8%" },
+    position: { top: "10%", left: "8%" },
     scale: 1.4
   },
   {
     id: 2,
-    title: "LIFESTYLE",
-    tags: "[web design, branding]",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=700&h=500&fit=crop",
-    position: { top: "30%", left: "3%" },
+    title: "VIBECODED",
+    tags: "Low level programmaing & music theory",
+    image: "/images/vibecoded.png",
+    position: { top: "50%", left: "3%" },
     scale: 1.2
   },
   {
@@ -49,9 +49,9 @@ const projects: Project[] = [
   },
   {
     id: 4,
-    title: "RESTAURANT/CAFÉ",
-    tags: "[web design, branding]",
-    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=550&fit=crop",
+    title: "ODYSSEY OUTRUN",
+    tags: "Game engine work & Physics understanding",
+    image: "/images/odyssey-outrun.jpg",
     position: { bottom: "8%", right: "12%" },
     scale: 1.35
   }
