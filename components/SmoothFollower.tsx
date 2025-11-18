@@ -25,7 +25,6 @@ export default function SmoothFollower() {
     const handleMouseEnter = () => setIsHovering(true)
     const handleMouseLeave = () => setIsHovering(false)
 
-    // Add event listeners
     window.addEventListener("mousemove", handleMouseMove)
 
     const interactiveElements = document.querySelectorAll("a, button, img, input, textarea, select")
@@ -34,7 +33,6 @@ export default function SmoothFollower() {
       element.addEventListener("mouseleave", handleMouseLeave)
     })
 
-    // Animation function for smooth movement
     const animate = () => {
       const lerp = (start: number, end: number, factor: number) => {
         return start + (end - start) * factor
@@ -54,7 +52,6 @@ export default function SmoothFollower() {
       requestAnimationFrame(animate)
     }
 
-    // Start animation loop
     const animationId = requestAnimationFrame(animate)
 
     // Clean up
@@ -77,7 +74,7 @@ export default function SmoothFollower() {
   return (
     <div className="pointer-events-none fixed inset-0 z-50">
       <div
-        className="absolute rounded-full border-2 border-neutral-900 dark:border-white transition-colors"
+        className="opacity-0 sm:opacity-100 md:opacity-100 lg:opacity-100 absolute rounded-full border-2 border-neutral-900 dark:border-white transition-colors"
         style={{
           width: isHovering ? "54px" : "38px",
           height: isHovering ? "54px" : "38px",

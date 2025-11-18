@@ -7,6 +7,21 @@ import {
   useMotionValue,
   MotionValue,
 } from "framer-motion";
+import { useEffect, useState } from "react";
+import { ProjectMobileCard } from "./ParallaxShowcaseMobile";
+
+function useIsMobile(breakpoint = 768) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < breakpoint);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, [breakpoint]);
+
+  return isMobile;
+}
 
 interface Project {
   id: number;
@@ -34,8 +49,7 @@ const projects: Project[] = [
     id: 1,
     title: "C PATHFINDING",
     tags: "Low level programming & Pathfinding",
-    image:
-      "/images/affiche.png",
+    image: "/images/affiche.png",
     position: { top: "15%", left: "8%" },
     scale: 1.4,
   },
@@ -145,9 +159,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 };
 
 export default function ProjectsSection() {
+  const isMobile = useIsMobile();
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // typage explicite MotionValue<number>
   const mouseX = useMotionValue<number>(0.5);
   const mouseY = useMotionValue<number>(0.5);
 
@@ -159,7 +173,7 @@ export default function ProjectsSection() {
   const titleOpacity = useTransform(
     scrollYProgress,
     [0.2, 0.3, 0.5, 0.6],
-    [0, 1, 1, 0]
+    [0, .5, .5, 0]
   );
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -169,13 +183,28 @@ export default function ProjectsSection() {
     mouseY.set(clientY / innerHeight);
   };
 
+  if (isMobile) {
+    return (
+      <section className="px-4 py-20 space-y-8 flex justify-center items-center ">
+        <div className=" absolute rotate-90 [font-family:var(--font-bokor)] text-[clamp(20rem,35vw,48rem)] tracking-widest text-black/50 dark:text-neutral-100/30">
+          Projects
+        </div>
+        <div className="space-y-6">
+          {projects.map((project) => (
+            <ProjectMobileCard key={project.id} project={project} />
+          ))}
+        </div>
+      </section>
+    );
+  }
+
   return (
     <div onMouseMove={handleMouseMove}>
       <div ref={containerRef} className="relative">
         <div className="mt-58 fixed inset-0 flex items-center justify-center pointer-events-none z-0">
           <motion.h1
             style={{ opacity: titleOpacity }}
-            className="[font-family:var(--font-bokor)] text-[15rem] font-bold tracking-tighter select-none"
+            className="[font-family:var(--font-bokor)] text-[15rem] font-bold select-none"
           >
             PROJECTS
           </motion.h1>

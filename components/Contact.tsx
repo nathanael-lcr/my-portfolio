@@ -36,14 +36,25 @@ export default function Contact() {
 
   return (
     <div className="flex justify-center items-center min-h-screen px-4">
-      <div className="relative">
-        {/* Texte géant en fond */}
-        <div className="[font-family:var(--font-bokor)] dark:text-neutral-100 text-[2800px] md:text-[28 0px] lg:text-[440px] leading-none font-bold text-black select-none">
+      <div className="relative flex flex-col items-center">
+        {/* Texte géant */}
+        <div
+          className="[font-family:var(--font-bokor)]
+                    text-[clamp(2.5rem,18vw,10rem)]
+                    sm:text-[clamp(3rem,25vw,38rem)]
+                    dark:text-neutral-100
+                    leading-none font-bold text-black select-none"
+        >
           CONTACT
         </div>
 
-        {/* Grille de cartes */}
-        <div className="[font-family:var(--font-figtree)] -inset-10 absolute grid grid-cols-3 grid-rows-2 gap-8">
+        {/* Grille */}
+        <div
+          className="[font-family:var(--font-figtree)]
+                    grid grid-cols-1 grid-rows-4 gap-6 mt-10
+                    sm:absolute sm:-inset-20 
+                    sm:grid-cols-3 sm:grid-rows-2 sm:gap-8"
+        >
           {contacts.map((contact, index) => (
             <TiltCard
               key={contact.label}
@@ -93,7 +104,6 @@ function TiltCard({
     const offsetX = e.clientX - rect.left - rect.width / 2;
     const offsetY = e.clientY - rect.top - rect.height / 2;
 
-    // Rotation douce et proportionnelle
     const rotationX = (offsetY / (rect.height / 2)) * -rotateAmplitude;
     const rotationY = (offsetX / (rect.width / 2)) * rotateAmplitude;
 

@@ -10,7 +10,6 @@ import TechStackCarousel from "@/components/TechStackCarousel";
 import Contact from "@/components/Contact";
 import ParallaxShowcase from "@/components/ParallaxShowcase";
 
-// Variants d'animation réutilisables
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 60 },
   visible: {
@@ -112,14 +111,14 @@ export default function Home() {
               variants={staggerContainer}
             >
               <motion.div
-                className="[font-family:var(--font-bokor)] text-[clamp(3rem,16vw,22rem)] leading-none"
+                className="[font-family:var(--font-bokor)] text-[clamp(4rem,23vw,7rem)] sm:text-[clamp(3rem,16vw,22rem)] leading-none"
                 variants={slideInLeft}
               >
                 NATHANAEL
               </motion.div>
 
               <motion.div
-                className="[font-family:var(--font-bokor)] text-[clamp(3rem,16vw,22rem)] leading-none"
+                className="[font-family:var(--font-bokor)] text-[clamp(4rem,23vw,7rem)] sm:text-[clamp(3rem,16vw,22rem)] leading-none"
                 variants={slideInLeft}
               >
                 LECRON
@@ -129,18 +128,19 @@ export default function Home() {
             {/* RIGHT — DESCRIPTION */}
             <motion.div
               className="
-              text-[clamp(1rem,2vw,3rem)]
-        font-medium 
-        [font-family:var(--font-figtree)]
-        text-left 
-        space-y-1
-        mr-12
+              [clamp(.3rem,5vw,2rem)]
+              sm:text-[clamp(1rem,2vw,3rem)]
+              font-medium 
+              [font-family:var(--font-figtree)]
+              text-left 
+              space-y-1
+              sm:mr-12
 
-        md:absolute
-        md:right-10
-        md:text-right
-        md:pb-11
-      "
+              md:absolute
+              md:right-10
+              md:text-right
+              md:pb-11
+              "
               initial="hidden"
               animate="visible"
               variants={staggerContainer}
