@@ -23,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${figtree.variable} ${bokor.variable}`}>
-      <body className="bg-neutral-50 text-neutral-900">
+      <body className="bg-neutral-50 text-neutral-900 overflow-x-hidden">
         <ThemeProvider>
           <Header />
           {children}

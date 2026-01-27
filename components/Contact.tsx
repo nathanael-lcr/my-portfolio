@@ -12,7 +12,7 @@ export default function Contact() {
   const contacts = [
     {
       label: "Latest Project",
-      link: "https://www.brainbinder.net/",
+      link: "https://www.codbar.dev",
       className: "row-span-2",
       position: "justify-start items-start",
     },

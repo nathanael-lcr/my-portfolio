@@ -25,7 +25,7 @@ export default function Header() {
         <button
           onClick={handleClick}
           type="button"
-          className=" p-2 md:p-3 rounded-full bg-neutral-300/40 dark:bg-neutral-700/40 backdrop-blur-md hover:bg-neutral-400/40 dark:hover:bg-neutral-600/40 transition-colors"
+          className=" p-2 md:p-3 rounded-full bg-neutral-300/40 dark:bg-neutral-700/40 backdrop-blur-md hover:bg-neutral-400/40 dark:hover:bg-neutral-600/40 transition-colors cursor-pointer"
           aria-label="Toggle theme"
         >
           {theme === "light" ? (

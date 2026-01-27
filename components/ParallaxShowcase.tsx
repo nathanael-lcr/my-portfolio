@@ -77,6 +77,14 @@ const projects: Project[] = [
     position: { bottom: "8%", right: "12%" },
     scale: 1.35,
   },
+  {
+    id: 5,
+    title: "GAMEJAM REGISTRATION",
+    tags: "React and SQL project for team management",
+    image: "/images/codbar.png",
+    position: { top: "40%", right: "32%" },
+    scale: 1.25,
+  },
 ];
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
